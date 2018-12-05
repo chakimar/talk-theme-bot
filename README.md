@@ -1,5 +1,17 @@
-# python-slackbot-devkit
-Python slackbot development kit
+# talk-theme-bot
+Talk theme slackbot
+
+## Features
+* CRUD talk theme
+* Dice roll talk theme
+
+## Bot Commands
+`./talk-theme list` - show talk theme list  
+`./talk-theme now` - show now talk theme  
+`./talk-theme add <talk-theme>` - add talk theme  
+`./talk-theme diceroll` - dice roll talk theme  
+`./talk-theme history` - show talk theme history  
+`./talk-theme version` - show bot version  
 
 ## Getting Started
 
