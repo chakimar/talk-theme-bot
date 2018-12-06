@@ -29,6 +29,11 @@ docker build . -t mybot
 docker run -e API_TOKEN=xxx-xxx-xxx -it mybot
 ```
 
+### Volume
+`/slackbot/data`  
+Persistent data directory.
+
+
 ##  Debug
 Insert your api token to slackbot_settings.py
 ```python:slackbot_settings.py
