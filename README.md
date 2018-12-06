@@ -30,15 +30,9 @@ Get API Token from slack bot page.
 
 Set your API Token to environment value at runtime.(See below `Run` section)
 
-### Build
-```
-docker build . -t mybot
-```
-
-
 ### Run
 ```
-docker run -e API_TOKEN=xxx-xxx-xxx -it mybot
+docker run -e API_TOKEN=xxx-xxx-xxx -it chakimar/talk-theme-bot
 ```
 
 ### Volume
@@ -57,6 +51,13 @@ and run below
 ```
 python3 run.py
 ```
+
+### Build & Run
+```
+docker build . -t mybot
+docker run -e API_TOKEN=xxx-xxx-xxx -it mybot
+```
+
 
 ## Vagrant
 
