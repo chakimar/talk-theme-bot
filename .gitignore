@@ -1,2 +1,7 @@
 .vagrant
 __pycache__
+.vscode
+slackbot_settings.py
+talk_theme.lst
+talk_theme_history.lst
+now_talk_theme
