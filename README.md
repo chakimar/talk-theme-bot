@@ -2,7 +2,7 @@
 Talk theme slackbot
 
 ## Features
-* CRUD talk theme
+* Management talk theme
 * Dice roll talk theme
 
 ## Bot Commands
@@ -13,10 +13,18 @@ Talk theme slackbot
 `./talk-theme history` - show talk theme history  
 `./talk-theme version` - show bot version  
 
+`./talk-theme` commands can be changed to mention.
+
 ## Getting Started
 
 ### Prerequisites
 * Docker
+
+
+### Volume
+`/slackbot/data`  
+Persistent data directory.
+
 
 
 ## Development
@@ -34,11 +42,6 @@ Set your API Token to environment value at runtime.(See below `Run` section)
 ```
 docker run -e API_TOKEN=xxx-xxx-xxx -it chakimar/talk-theme-bot
 ```
-
-### Volume
-`/slackbot/data`  
-Persistent data directory.
-
 
 ##  Debug
 Insert your api token to slackbot_settings.py
