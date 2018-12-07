@@ -22,15 +22,6 @@ Talk theme slackbot
 ### Prerequisites
 * Docker
 
-
-### Volume
-`/slackbot/data`  
-Persistent data directory.
-
-
-
-## Development
-
 ### Get API Token
 
 Get API Token from slack bot page.
@@ -45,6 +36,14 @@ Set your API Token to environment value at runtime.(See below `Run` section)
 docker run -e API_TOKEN=xxx-xxx-xxx -it chakimar/talk-theme-bot
 ```
 
+### Volume
+`/slackbot/data`  
+Persistent data directory.
+
+
+
+## Development
+
 ##  Debug
 Insert your api token to slackbot_settings.py
 ```python:slackbot_settings.py
@@ -57,7 +56,7 @@ and run below
 python3 run.py
 ```
 
-### Build & Run
+### Docker Build & Run
 ```
 docker build . -t mybot
 docker run -e API_TOKEN=xxx-xxx-xxx -it mybot
