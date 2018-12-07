@@ -50,7 +50,7 @@ def show_talk_theme_usage(message):
            ' `./talk-theme diceroll`\t次のトークテーマを決める\n'\
            ' `./talk-theme history`\t過去のトークテーマ一覧\n'\
            ' `./talk-theme version`\tバージョン表示\n'\
-           '上記コマンドは `./takl-theme`をbotへのメンションに変えても反応します。\n'\
+           '上記コマンドは `./talk-theme`をbotへのメンションに変えても反応します。\n'\
            'また、botへのダイレクトメッセージであれば `./talk-theme`を省略可能です。'
     attachments = [
     {
