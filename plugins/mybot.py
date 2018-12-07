@@ -49,6 +49,7 @@ def show_talk_theme_usage(message):
            ' `./talk-theme add <トークテーマ>`\tトークテーマを追加\n'\
            ' `./talk-theme diceroll`\t次のトークテーマを決める\n'\
            ' `./talk-theme history`\t過去のトークテーマ一覧\n'\
+           ' `./talk-theme set`\t直接テーマを設定\n'\
            ' `./talk-theme version`\tバージョン表示\n'\
            '上記コマンドは `./talk-theme`をbotへのメンションに変えても反応します。\n'\
            'また、botへのダイレクトメッセージであれば `./talk-theme`を省略可能です。'
@@ -144,6 +145,7 @@ def show_talk_theme_history(message):
         message.send('履歴はありません')
 
 @respond_to('set')
+@listen_to('./talk-theme set')
 def set_talk_theme(message):
     if now_talk_theme:
         _save_talk_theme_history(now_talk_theme)
