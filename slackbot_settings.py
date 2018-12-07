@@ -2,6 +2,6 @@
 
 API_TOKEN = ""
 
-DEFAULT_REPLY = "にゃーん"
+DEFAULT_REPLY = "ごきげんよう"
 
 PLUGINS = ['plugins']
