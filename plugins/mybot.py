@@ -4,7 +4,7 @@ import json
 import random
 import os
 
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 TALK_THEME_PATH = 'data/talk_theme.lst'
 TALK_THEME_HISTORY_PATH = 'data/talk_theme_history.lst'
 NOW_TALK_THEME_PATH = 'data/now_talk_theme'
@@ -47,9 +47,10 @@ def show_talk_theme_usage(message):
     usage = ' `./talk-theme list`\t一覧表示\n'\
            ' `./talk-theme now`\t現在のトークテーマ\n'\
            ' `./talk-theme add <トークテーマ>`\tトークテーマを追加\n'\
-           ' `./talk-theme diceroll`\t次のトークテーマを決める\n'\
+           ' `./talk-theme set`\t直接トークテーマを設定\n'\
+           ' `./talk-theme remove`\tトークテーマを削除\n'\
+           ' `./talk-theme diceroll`\t次のトークテーマをサイコロで決める\n'\
            ' `./talk-theme history`\t過去のトークテーマ一覧\n'\
-           ' `./talk-theme set`\t直接テーマを設定\n'\
            ' `./talk-theme version`\tバージョン表示\n'\
            '上記コマンドは `./talk-theme`をbotへのメンションに変えても反応します。\n'\
            'また、botへのダイレクトメッセージであれば `./talk-theme`を省略可能です。'
@@ -153,6 +154,18 @@ def set_talk_theme(message):
     tmp, new_theme = text.rsplit(None, 1)
     _save_now_talk_theme(new_theme)
     message.send('トークテーマを設定しました！')
+
+@respond_to('remove')
+@listen_to('./talk-theme remove')
+def remove_talk_theme(message):
+    text = message.body['text']
+    tmp, target_theme = text.rsplit(None, 1)
+    if target_theme in talk_themes:
+        talk_themes.remove(target_theme)
+        _save_talk_theme()
+        message.send('トークテーマを削除しました！')
+    else:
+        message.send('削除対象のトークテーマがありません')
 
 def _save_talk_theme():
     with open(TALK_THEME_PATH, mode='w') as f:
