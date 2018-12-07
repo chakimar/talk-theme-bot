@@ -65,7 +65,7 @@ docker run -e API_TOKEN=xxx-xxx-xxx -it mybot
 
 ## Vagrant
 
-### Installing
+### Provisioning
 ```
 vagrant plugin install vagrant-docker-compose
 vagrant up
