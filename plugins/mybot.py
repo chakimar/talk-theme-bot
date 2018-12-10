@@ -48,7 +48,7 @@ def show_talk_theme_usage(message):
            ' `./talk-theme now`\t現在のトークテーマ\n'\
            ' `./talk-theme add <トークテーマ>`\tトークテーマを追加\n'\
            ' `./talk-theme set`\t直接トークテーマを設定\n'\
-           ' `./talk-theme remove`\tトークテーマを削除\n'\
+           ' `./talk-theme remove <トークテーマ>`\tトークテーマを削除\n'\
            ' `./talk-theme diceroll`\t次のトークテーマをサイコロで決める\n'\
            ' `./talk-theme history`\t過去のトークテーマ一覧\n'\
            ' `./talk-theme version`\tバージョン表示\n'\
