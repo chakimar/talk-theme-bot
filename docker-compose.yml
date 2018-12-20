@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+  talk-theme-bot:
+    image: talk-theme-bot
+    build: .
+    environment: 
+      - SLACKBOT_API_TOKEN=<your-api-token>
+    volumes:
+      - /vagrant/data:/app/data
+    restart: always
