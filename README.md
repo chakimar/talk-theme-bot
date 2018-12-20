@@ -33,11 +33,11 @@ Set your API Token to environment value at runtime.(See below `Run` section)
 
 ### Run
 ```
-docker run -e API_TOKEN=xxx-xxx-xxx -it chakimar/talk-theme-bot
+docker run -e SLACKBOT_API_TOKEN=xxx-xxx-xxx -it chakimar/talk-theme-bot
 ```
 
 ### Volume
-`/slackbot/data`  
+`/app/data`  
 Persistent data directory.
 
 
@@ -59,7 +59,7 @@ python3 run.py
 ### Docker Build & Run
 ```
 docker build . -t mybot
-docker run -e API_TOKEN=xxx-xxx-xxx -it mybot
+docker run -e SLACKBOT_API_TOKEN=xxx-xxx-xxx -it mybot
 ```
 
 
