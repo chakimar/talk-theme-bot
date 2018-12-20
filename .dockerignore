@@ -1,2 +1,7 @@
-.vagrant
 __pycache__
+.vagrant
+.vscode
+.gitignore
+README.md
+Vagrantfile
+data
