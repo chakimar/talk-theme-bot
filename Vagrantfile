@@ -68,10 +68,5 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision :docker
-  config.vm.provision :docker_compose
-  config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
-    apt-get install -y python3-pip
-    pip3 install slackbot
-  SHELL
+  config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", rebuild: true, run: "always"
 end
