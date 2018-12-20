@@ -1,18 +1,9 @@
-FROM python
-RUN apt-get update && apt-get install -y \
-    python3-pip \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
-RUN pip3 install slackbot
-RUN mkdir -p /slackbot/plugins && mkdir -p /slackbot/data
-COPY run.py /slackbot/
-COPY slackbot_settings.py /slackbot/
-COPY plugins/*.py /slackbot/plugins/
-WORKDIR slackbot
+FROM python:alpine
 
-COPY docker-entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh \
- && ln -s usr/local/bin/docker-entrypoint.sh / # backwards compat
-ENTRYPOINT ["docker-entrypoint.sh"]
+LABEL Name=talk-theme-bot Version=0.0.3
 
-CMD [ "python3", "run.py" ]
+WORKDIR /app
+ADD . /app
+
+RUN python3 -m pip install -r requirements.txt
+CMD ["python3", "run.py"]
